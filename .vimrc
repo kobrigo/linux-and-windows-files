@@ -29,9 +29,9 @@ vnoremap H ^
 vnoremap L $
 
 " paste from the last yanked thing avoiding the last deleted thing for example
-:map <leader><leader> "0p
-:map <leader>' viwdi"<esc>pa"
- 
+map <leader><leader> "0p
+map <leader>' viWda'<esc>pa'
+map <leader>" viWda"<esc>pa"
 
 nnoremap Y y$
 " These are the lines that are needed for Vundle
