@@ -34,16 +34,10 @@ vnoremap L $
  
 
 nnoremap Y y$
-" :vmap y y']
-" :vmap Y Y']
-":vmap p p']
-":vmap P P']
-
 " These are the lines that are needed for Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'scrooloose/nerdtree'
-"Plugin 'altercation/vim-colors-solarized'
 Plugin 'Townk/vim-autoclose'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'flazz/vim-colorschemes'
@@ -57,19 +51,74 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'leafgarland/typescript-vim'
 call vundle#end()
 
+" sets the default directories where ctags will look for it's database
+set tags=./tags;~/Projects
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_type_typescript = {                                                  
+  \ 'ctagsbin' : 'tstags',                                                        
+  \ 'ctagsargs' : '-f-',                                                           
+  \ 'kinds': [                                                                     
+    \ 'e:enums:0:1',                                                               
+    \ 'f:function:0:1',                                                            
+    \ 't:typealias:0:1',                                                           
+    \ 'M:Module:0:1',                                                              
+    \ 'I:import:0:1',                                                              
+    \ 'i:interface:0:1',                                                           
+    \ 'C:class:0:1',                                                               
+    \ 'm:method:0:1',                                                              
+    \ 'p:property:0:1',                                                            
+    \ 'v:variable:0:1',                                                            
+    \ 'c:const:0:1',                                                              
+  \ ],                                                                            
+  \ 'sort' : 0                                                                    
+\ } 
+
 " NERDTree specific settings
-" opens a close NERDTree with Ctrl+n
-map <C-n> :NERDTreeToggle<CR>
 " show also all the hidden files in NERDTree
 let NERDTreeShowHidden=1
-" make NERDTree sync it line to show the file we currently entering
-"autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+" Open NERDTree in the directory of the current file (or /home if no file is open) this is a better alternative to :NERDTreeToggle
+nmap <C-n> :call NERDTreeToggleInCurDir()<cr>
+function! NERDTreeToggleInCurDir()
+  " If NERDTree is open in the current buffer
+  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+    exe ":NERDTreeClose"
+  else
+      if bufname('%') == ""
+        exe ":NERDTreeToggle"
+    else 
+        exe ":NERDTreeFind"
+    endif
+  endif
+endfunction
+" map alt+1 to jump to the nerd tree tab
+" nnoremap <A-1> :NERDTreeFocus<CR>
+nnoremap <A-1> :ehco %:p<CR>
+
+
+
+" Use this function to prevent CtrlP opening files inside non-writeable buffers, e.g. NERDTree
+function! SwitchToWriteableBufferAndExec(command)
+    let c = 0
+    let wincount = winnr('$')
+    " Don't open it here if current buffer is not writable (e.g. NERDTree)
+    while !empty(getbufvar(+expand("<abuf>"), "&buftype")) && c < wincount
+        exec 'wincmd w'
+        let c = c + 1
+    endwhile
+    exec a:command
+endfunction
+
+"CtrlP specific settings
+let g:ctrlp_map = '' " Disable default mapping since we are overriding it with our command
+nnoremap <C-p> :call SwitchToWriteableBufferAndExec('CtrlP')<CR>
+nnoremap <C-l> :call SwitchToWriteableBufferAndExec('CtrlPMRUFiles')<CR>
+nnoremap <C-e> :call SwitchToWriteableBufferAndExec('CtrlPBuffer')<CR>
+let g:ctrlp_show_hidden = 1
 
 " my selected color scheme in vim from flazz/vim-colorschemes
 "colorscheme Benokai
 colorscheme jellybeans
 "colorscheme jelleybeans
-
 
 " hightlight the current line where the cursor is the position of this is critical it has to be after the setting of the genral theme
 :set cursorline
@@ -85,15 +134,46 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-" and keybinding for auto indentation pressting Ctrl+f on normal mode on top
-autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
-autocmd FileType json vnoremap <buffer> <c-f> :call RangeJsonBeautify()<cr>
-autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
-autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
-autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+" returns true iff is NERDTree open/active
+function! IsNTOpen()        
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1) 
+endfunction
 
-vnoremap <leader><leader>" di""<esc>P 
-vnoremap <leader><leader>' di''<esc>Pl
+function! IsNTIsTheCurrentBuffer()
+    return bufwinnr(@%) == bufwinnr(t:NERDTreeBufName)
+endfunction
 
-" maps .ts and tsx fils to have the typescript syntax highlighting
-autocmd BufNewFile,BufRead *.ts,*.tsx set filetype=typescript
+" calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNTOpen() && !IsNTIsTheCurrentBuffer()  && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+
+augroup myvimrc
+    autocmd!
+    " open the quickfix buffer right after a vimgrep command
+    autocmd QuickFixCmdPost [^l]* cwindow
+    autocmd QuickFixCmdPost l*    lwindow
+
+    " and keybinding for auto indentation pressting Ctrl+f on normal mode on top
+    autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+    autocmd FileType json vnoremap <buffer> <c-f> :call RangeJsonBeautify()<cr>
+    autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
+    autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+    autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+
+    " maps .ts and tsx fils to have the typescript syntax highlighting
+    autocmd BufNewFile,BufRead *.ts,*.tsx set filetype=typescript
+
+    " make NERDTree sync it line to show the file we currently entering
+    "autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+    autocmd BufEnter * call SyncTree() 
+    " close vim if NERDTree is the only buffer left
+    "autocmd bufenter * if (winnr("$") == 1 && exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)) | q | endif
+augroup END
+
+" ignore the caseing on searches
+set ignorecase 
