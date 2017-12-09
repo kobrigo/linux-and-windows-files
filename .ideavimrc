@@ -1,0 +1,39 @@
+set clipboard+=unnamed
+set ic
+" stop the annoying beeping sound when pressing esc when you should not
+set vb
+
+map <S-Enter> O<ESC>
+
+"let mapleader=","
+let mapleader=" "
+
+:map <leader>' "0p
+:map Y y$
+:map <leader><leader> "0p
+map <leader>' viWda'<esc>pa'
+map <leader>" viWda"<esc>pa"
+"  :vmap y y']
+
+map <A-j> :action MoveLineDown
+map <A-k> :action MoveLineUp
+map <leader>b :action GotoDeclaration<CR>
+
+" Just to beginning and end of lines easier. From http://vimbits.com/bits/16
+" make the leader H and L combination do the original jump to the top and
+" bottom of the page
+nnoremap <leader>H H
+nnoremap <leader>L L
+vnoremap <leader>H H
+vnoremap <leader>L L
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+
+" Move lines up and down
+map <A-j> :action MoveLineDown<CR>
+map <A-k> :action MoveLineUp<CR>
+map <leader>l :action ReformatSelection<CR>
+
+set ignorecase
