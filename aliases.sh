@@ -45,3 +45,31 @@ alias cdw='cd /cygdrive/c/Projects/DndEditor'
 alias cds='cd /cygdrive/c/SupportToolsPortalWorkspace/SupportToolsPortal/SupportToolPortalUI'
 
 alias lb='git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)" | vim -R -' 
+
+copyCurrentBranchInCywin()
+{
+    git branch | grep "*" | awk '{ print $2 }' | tr -d '\r' | putclip
+}
+
+copyCurrentBranchInMacOSX()
+{
+    //needs testing
+    git branch | grep "*" | awk '{ print $2 }' | tr -d '\r' | pbcopy
+}
+
+copyCurrentBranchInLinux()
+{
+    //needs testing
+    git branch | grep "*" | awk '{ print $2 }' | tr -d '\r' | xclip
+}
+
+if [[ $OSTYPE == 'cygwin' ]]; then
+   alias cb='copyCurrentBranchInCywin'
+elif [[ $OSTYPE == 'darwin' ]]; then
+   alias cb='copyCurrentBranchInMacOSX'
+elif [[ $OSTYPE == 'linux' ]]; then
+   alias cb='copyCurrentBranchInLinux'
+fi
+
+# use vimdiff as the difftool for a file with git
+alias gd='git difftool -t vimdiff -y'
