@@ -54,8 +54,11 @@ copyCurrentBranchToClipBoard()
 
 alias cb='copyCurrentBranchToClipBoard'
 
-# use vimdiff as the difftool for a file with git
-alias gd='git difftool -t vimdiff -y'
+# use vimdiff as the difftool for a file with git usage $> gd <filename> it will compare to the last version of the file.
+alias gvd='git difftool -t vimdiff -y'
+
+# use vimdiff as the mergetool in command prompt
+alias gvm='git mergetool -t vimdiff -y'
 
 # copy the current directory to the clipboard
 alias ccd='pwd | clipcopy'
