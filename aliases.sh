@@ -46,30 +46,16 @@ alias cds='cd /cygdrive/c/SupportToolsPortalWorkspace/SupportToolsPortal/Support
 
 alias lb='git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)" | vim -R -' 
 
-copyCurrentBranchInCywin()
+# this uses clipcopy that has special cases for all OSes 
+copyCurrentBranchToClipBoard()
 {
-    git branch | grep "*" | awk '{ print $2 }' | tr -d '\r' | putclip
+    git branch | grep "*" | awk '{ print $2 }' | tr -d '\r' | clipcopy
 }
 
-copyCurrentBranchInMacOSX()
-{
-    //needs testing
-    git branch | grep "*" | awk '{ print $2 }' | tr -d '\r' | pbcopy
-}
-
-copyCurrentBranchInLinux()
-{
-    //needs testing
-    git branch | grep "*" | awk '{ print $2 }' | tr -d '\r' | xclip
-}
-
-if [[ $OSTYPE == 'cygwin' ]]; then
-   alias cb='copyCurrentBranchInCywin'
-elif [[ $OSTYPE == 'darwin' ]]; then
-   alias cb='copyCurrentBranchInMacOSX'
-elif [[ $OSTYPE == 'linux' ]]; then
-   alias cb='copyCurrentBranchInLinux'
-fi
+alias cb='copyCurrentBranchToClipBoard'
 
 # use vimdiff as the difftool for a file with git
 alias gd='git difftool -t vimdiff -y'
+
+# copy the current directory to the clipboard
+alias ccd='pwd | clipcopy'
