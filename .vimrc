@@ -32,7 +32,7 @@ vnoremap H ^
 vnoremap L $
 
 " paste from the last yanked thing avoiding the last deleted thing for example
-map <leader><leader> "0p
+nnoremap <leader><leader> "0p
 map <leader>' viWda'<esc>pa'
 map <leader>" viWda"<esc>pa"
 
@@ -124,9 +124,9 @@ let g:ctrlp_show_hidden = 1
 "colorscheme jelleybeans
 
 " hightlight the current line where the cursor is the position of this is critical it has to be after the setting of the genral theme
-:set cursorline
+set cursorline
 " changes the hightlight of the corsor line ctermbg is what actually did it
-:hi CursorLine ctermfg=NONE ctermbg=235 cterm=NONE guifg=NONE guibg=#282828 gui=NONE
+hi CursorLine ctermfg=NONE ctermbg=235 cterm=NONE guifg=NONE guibg=#282828 gui=NONE
 
 " makes indentation work depanding on plugins and the type of the file
 filetype plugin indent on
@@ -180,3 +180,5 @@ augroup END
 
 " ignore the caseing on searches
 set ignorecase 
+" disable all folding (mosting on vimdiff)
+set nofoldenable
