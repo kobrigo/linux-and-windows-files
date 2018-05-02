@@ -93,6 +93,6 @@ bindkey -M viins 'jj' vi-cmd-mode
 # adds the ability to search with ctrl+r
 bindkey '^R' history-incremental-search-backward
 #read all the aliases from my alieases file
-source ~/scripts/aliases
+source ~/scripts/aliases.sh
 
 

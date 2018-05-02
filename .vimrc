@@ -4,9 +4,12 @@ set ruler
 
 "disable word wrapping
 set nowrap
+
 " makes the yank also be taken to the OS lipboard
-" set clipboard=unnamed
-set clipboard=unnamedplus
+"this one worked on cygwin.
+set clipboard=unnamed
+"this did not work on cygwin
+"set clipboard=unnamedplus
 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -43,7 +46,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jakedouglas/exuberant-ctags'
-Plugin 'majutsushi/tagbar'
+
 Plugin 'vim-airline/vim-airline'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'marcelbeumer/javascript-syntax.vim'
@@ -117,7 +120,7 @@ let g:ctrlp_show_hidden = 1
 
 " my selected color scheme in vim from flazz/vim-colorschemes
 "colorscheme Benokai
-colorscheme jellybeans
+"colorscheme jellybeans
 "colorscheme jelleybeans
 
 " hightlight the current line where the cursor is the position of this is critical it has to be after the setting of the genral theme
