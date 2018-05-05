@@ -8,11 +8,19 @@ set nowrap
 " makes the yank also be taken to the OS lipboard
 "this one worked on cygwin.
 set clipboard=unnamed
-"this did not work on cygwin
+"this clipboard dit not work when $TERM was cygwin
 "set clipboard=unnamedplus
 
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+"set the cursor char on each state right
+if $TERM == 'cygwin'
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+else 
+    let &t_ti="\e[1 q"
+    let &t_SI="\e[5 q"
+    let &t_EI="\e[1 q"
+    let &t_te="\e[0 q"
+endif
 
 " this defines the leader key of vim to be the comma key
 "let mapleader=","
@@ -41,12 +49,12 @@ nnoremap Y y$
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'Townk/vim-autoclose'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'jakedouglas/exuberant-ctags'
-
+"Plugin 'jakedouglas/exuberant-ctags'
 Plugin 'vim-airline/vim-airline'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'marcelbeumer/javascript-syntax.vim'
@@ -124,9 +132,9 @@ let g:ctrlp_show_hidden = 1
 "colorscheme jelleybeans
 
 " hightlight the current line where the cursor is the position of this is critical it has to be after the setting of the genral theme
-set cursorline
+"set cursorline
 " changes the hightlight of the corsor line ctermbg is what actually did it
-hi CursorLine ctermfg=NONE ctermbg=235 cterm=NONE guifg=NONE guibg=#282828 gui=NONE
+"hi CursorLine ctermfg=NONE ctermbg=235 cterm=NONE guifg=NONE guibg=#282828 gui=NONE
 
 " makes indentation work depanding on plugins and the type of the file
 filetype plugin indent on
