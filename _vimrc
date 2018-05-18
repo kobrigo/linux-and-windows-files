@@ -60,6 +60,8 @@ nnoremap H ^
 nnoremap L $
 vnoremap H ^
 vnoremap L $
+nnoremap J 10j
+nnoremap K 10k
 
 " paste from the last yanked thing avoiding the last deleted thing for example
 :map <leader><leader> "0p
