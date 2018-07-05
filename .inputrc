@@ -1,0 +1,3 @@
+# This is one of the options to set vi mode on the command line. There is another option on the .bashrc file
+set editing-mode vi
+set keymap vi-command
