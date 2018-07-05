@@ -62,3 +62,5 @@ alias gvm='git mergetool -t vimdiff -y'
 
 # copy the current directory to the clipboard
 alias ccd='pwd | clipcopy'
+
+aliad ll='ls -la'
