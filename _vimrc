@@ -75,9 +75,9 @@ nnoremap Y y$
 ":vmap P P']
 
 " These are the lines that are needed for Vundle
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-" Plugin 'scrooloose/nerdtree'
+set rtp+=~/vimfiles/bundle/Vundle.vim
+ call vundle#begin()
+ Plugin 'scrooloose/nerdtree'
 " Plugin 'altercation/vim-colors-solarized'
 " Plugin 'flazz/vim-colorschemes'
 " Plugin 'ctrlpvim/ctrlp.vim'
@@ -86,7 +86,7 @@ nnoremap Y y$
 " Plugin 'marcelbeumer/javascript-syntax.vim'
 " Plugin 'easymotion/vim-easymotion'
 " Plugin 'leafgarland/typescript-vim'
-" call vundle#end()
+ call vundle#end()
 
 "opens a close NERDTree with Ctrl+n
 :map <C-n> :NERDTreeToggle<CR>
