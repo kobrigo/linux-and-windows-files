@@ -1,0 +1,104 @@
+{
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "vim.easymotion": true,
+    "vim.leader": " ",
+    "vim.useSystemClipboard": true,
+    "vim.operatorPendingModeKeyBindings": [
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                "j",
+                "j",
+                "j",
+                "j",
+                "j",
+                "j",
+                "j",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "k",
+                "k",
+                "k",
+                "k",
+                "k",
+                "k",
+                "k",
+                "k"
+           ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                "j",
+                "j",
+                "j",
+                "j",
+                "j",
+                "j",
+                "j",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "k",
+                "k",
+                "k",
+                "k",
+                "k",
+                "k",
+                "k",
+                "k"
+           ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        }
+    ]
+}
