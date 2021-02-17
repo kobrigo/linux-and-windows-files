@@ -22,3 +22,6 @@ alias ll='ls -la'
 # use by <some command> | tovim
 alias tovim='vim -R -' 
 
+alias gph='git push origin HEAD -u'
+alias gpt='git push origin --tags'
+

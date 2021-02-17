@@ -1,1 +1,1 @@
-source .dotfiles/alias.sh
+source .dotfiles/alias.base.sh

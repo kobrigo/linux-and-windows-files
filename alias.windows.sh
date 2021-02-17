@@ -1,4 +1,4 @@
-source .dotfiles/alias.sh
+source .dotfiles/alias.base.sh
 
 # aliases for cygwin
 alias cdh='cd /cygdrive/c/Users/eyal.kobrigo'
