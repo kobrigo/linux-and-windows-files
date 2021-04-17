@@ -192,3 +192,6 @@ augroup END
 set ignorecase 
 " disable all folding (mosting on vimdiff)
 set nofoldenable
+
+" disable the bell sound
+set belloff=all
