@@ -21,7 +21,11 @@ alias ll='ls -la'
 
 # use by <some command> | tovim
 alias tovim='vim -R -' 
+alias tovimreadonly='vim -R -M -' 
 
 alias gph='git push origin HEAD -u'
 alias gpt='git push origin --tags'
+
+# use vim as the git log pager
+alias glv='git --no-pager log | tovimreadonly'
 

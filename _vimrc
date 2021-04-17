@@ -78,6 +78,7 @@ nnoremap Y y$
 set rtp+=~/vimfiles/bundle/Vundle.vim
  call vundle#begin()
  Plugin 'scrooloose/nerdtree'
+ Plugin 'vim-scripts/indentpython.vim'
 " Plugin 'altercation/vim-colors-solarized'
 " Plugin 'flazz/vim-colorschemes'
 " Plugin 'ctrlpvim/ctrlp.vim'
@@ -133,4 +134,5 @@ set columns=120
 set nobackup
 set noundofile
 
-
+" disable the bell sound
+set belloff=all
