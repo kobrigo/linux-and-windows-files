@@ -39,3 +39,5 @@ map <A-k> :action MoveLineUp<CR>
 map <leader>l :action ReformatSelection<CR>
 
 set ignorecase
+set surround
+

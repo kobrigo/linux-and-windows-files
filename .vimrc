@@ -48,21 +48,52 @@ map <leader>" viWda"<esc>pa"
 
 nnoremap Y y$
 " These are the lines that are needed for Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Townk/vim-autoclose'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'jakedouglas/exuberant-ctags'
-Plugin 'vim-airline/vim-airline'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'marcelbeumer/javascript-syntax.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'leafgarland/typescript-vim'
-call vundle#end()
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdcommenter'
+" Plugin 'Townk/vim-autoclose'
+" Plugin 'vim-syntastic/syntastic'
+" Plugin 'flazz/vim-colorschemes'
+" Plugin 'ctrlpvim/ctrlp.vim'
+""  "Plugin 'jakedouglas/exuberant-ctags'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'maksimr/vim-jsbeautify'
+" Plugin 'marcelbeumer/javascript-syntax.vim'
+" Plugin 'easymotion/vim-easymotion'
+" Plugin 'leafgarland/typescript-vim'
+" call vundle#end()
+
+" Trying out antoher plugin manage
+call plug#begin('~/vim-plugins/plugged')
+Plug 'tpope/vim-surround'
+"Plug 'posva/vim-vue'
+"Plug 'tomtom/tcomment_vim'
+"Plug 'tmhedberg/matchit'
+"Plug 'freeo/vim-kalisi'
+Plug 'scrooloose/nerdtree'
+""plugin on GitHub repo
+"Plug 'tpope/vim-fugitive'
+"Plug 'christoomey/vim-tmux-navigator'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
+"Plug 'junegunn/fzf.vim'
+""youcompleteme
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+""pair completion
+"Plug 'raimondi/delimitmate'
+"let delimitMate_expand_cr = 1
+""tab completion
+"Plug 'ervandew/supertab'
+"colorscheme
+"Plug 'dracula/vim'
+"Plug 'crusoexia/vim-monokai'
+"Plug 'dracula/vim'
+"Plug 'mhartington/oceanic-next'
+" Plug 'kadekillary/subtle_dark'
+call plug#end()
+
 
 " sets the default directories where ctags will look for it's database
 set tags=./tags;~/Projects
