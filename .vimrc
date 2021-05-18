@@ -67,6 +67,7 @@ nnoremap Y y$
 " Trying out antoher plugin manage
 call plug#begin('~/vim-plugins/plugged')
 Plug 'tpope/vim-surround'
+Plug 'leafgarland/typescript-vim'
 "Plug 'posva/vim-vue'
 "Plug 'tomtom/tcomment_vim'
 "Plug 'tmhedberg/matchit'
