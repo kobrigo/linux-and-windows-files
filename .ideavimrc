@@ -10,7 +10,7 @@ let mapleader=" "
 
 :map <leader>' "0p
 :map Y y$
-:map <leader><leader> "0p
+:map <leader>p "0p
 map <leader>' viWda'<esc>pa'
 map <leader>" viWda"<esc>pa"
 "  :vmap y y']
@@ -32,6 +32,7 @@ vnoremap H ^
 vnoremap L $
 map J 10j
 map K 10k
+nnoremap <leader>g `.
 
 " Move lines up and down
 map <A-j> :action MoveLineDown<CR>
@@ -40,4 +41,5 @@ map <leader>l :action ReformatSelection<CR>
 
 set ignorecase
 set surround
+set textobj-indent
 

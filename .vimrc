@@ -40,9 +40,11 @@ vnoremap H ^
 vnoremap L $
 map J 10j
 map K 10k
+nnoremap <leader>g g;
 
 " paste from the last yanked thing avoiding the last deleted thing for example
-nnoremap <leader><leader> "0p
+nnoremap <leader>p "0p
+vnoremap <leader>p "0p
 map <leader>' viWda'<esc>pa'
 map <leader>" viWda"<esc>pa"
 
