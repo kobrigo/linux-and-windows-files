@@ -1,4 +1,5 @@
 {
     "vim.leader": " ",
-    "vim.vimrc.enable": true
+    "vim.vimrc.enable": true,
+    "vim.useSystemClipboard": true
 }
