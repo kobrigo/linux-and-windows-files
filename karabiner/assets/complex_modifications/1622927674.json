@@ -1,0 +1,1 @@
+{"title":"","rules":[{"description":"eyals-copy","manipulators":[{"type":"basic","from":{"modifiers":{"mandatory":["right_gui"]},"consumer_key_code":"insert"},"to":[{"repeat":true,"modifiers":["left_gui"],"key_code":"c"}]}]}]}
