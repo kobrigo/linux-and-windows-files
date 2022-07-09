@@ -24,7 +24,10 @@ alias tovim='vim -R -'
 alias tovimreadonly='vim -R -M -' 
 
 alias gph='git push origin HEAD -u'
+alias gcam='git commit -am '
 alias gpt='git push origin --tags'
+alias grs1='git reset HEAD~1 --soft'
+alias gct='git commit -am "temp"'
 
 # use vim as the git log pager
 alias glv='git --no-pager log | tovimreadonly'

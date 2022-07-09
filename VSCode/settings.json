@@ -1,5 +1,6 @@
 {
     "vim.leader": " ",
     "vim.vimrc.enable": true,
-    "vim.useSystemClipboard": true
+    "vim.useSystemClipboard": true,
+    "window.zoomLevel": 2
 }
