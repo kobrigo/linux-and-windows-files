@@ -10,7 +10,7 @@
             "key_code": "insert",
             "modifiers": {
               "mandatory": [
-                "right_command"
+                "right_control"
               ]
             }
           },
@@ -29,7 +29,7 @@
             "key_code": "fn",
             "modifiers": {
               "mandatory": [
-                "right_command"
+                "right_control"
               ]
             }
           },
@@ -175,7 +175,7 @@
             "key_code": "left_arrow",
             "modifiers": {
               "mandatory": [
-                "command"
+                "left_control"
               ],
               "optional": [
                 "any"
@@ -197,7 +197,7 @@
             "key_code": "right_arrow",
             "modifiers": {
               "mandatory": [
-                "command"
+                "left_control"
               ],
               "optional": [
                 "any"
@@ -224,7 +224,7 @@
             "key_code": "home",
             "modifiers": {
               "mandatory": [
-                "command"
+                "left_control"
               ],
               "optional": [
                 "any"
@@ -246,7 +246,7 @@
             "key_code": "end",
             "modifiers": {
               "mandatory": [
-                "command"
+                "left_control"
               ],
               "optional": [
                 "any"
