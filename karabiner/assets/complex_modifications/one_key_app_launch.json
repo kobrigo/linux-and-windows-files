@@ -142,6 +142,29 @@
               }
           ]
       }]
+    },{
+      "description": "Make the termial open with Command + Ctrl + t",
+      "manipulators": [
+      {
+          "type": "basic",
+          "from": {
+              "key_code": "t",
+              "modifiers": {
+                  "mandatory": [
+                      "command",
+                      "control"
+                  ],
+                  "optional": [
+                      "caps_lock"
+                  ]
+              }
+          },
+          "to": [
+              {
+                  "shell_command": "open  -a Terminal"
+              }
+          ]
+      }]
     }
   ]
 }
