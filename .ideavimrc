@@ -47,4 +47,6 @@ set textobj-indent
 # JavaScript/TypeScript Macros
 # --------------------------------
 # Console log the selectd text (select text first)
-:vmap <leader>l y<esc>oconsole.log(<c-r>");<esc>
+#:vmap <leader>l y<esc>oconsole.log('<esc><leader>pa: ',<esc><leader>pa);<esc>
+vmap <leader>l yoconsole.log('<esc>pa: <esc>lli, <esc>p<esc>A;<esc>H
+
