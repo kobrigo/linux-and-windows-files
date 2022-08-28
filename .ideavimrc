@@ -18,6 +18,7 @@ map <leader>" viWda"<esc>pa"
 map <A-j> :action MoveLineDown
 map <A-k> :action MoveLineUp
 map <leader>b :action GotoDeclaration<CR>
+map <leader>f :action RelatedSymbol<CR>
 
 " Just to beginning and end of lines easier. From http://vimbits.com/bits/16
 " make the leader H and L combination do the original jump to the top and
@@ -43,3 +44,7 @@ set ignorecase
 set surround
 set textobj-indent
 
+# JavaScript/TypeScript Macros
+# --------------------------------
+# Console log the selectd text (select text first)
+:vmap <leader>l y<esc>oconsole.log(<c-r>");<esc>
