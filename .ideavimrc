@@ -8,17 +8,20 @@ map <S-Enter> O<ESC>
 "let mapleader=","
 let mapleader=" "
 
+" set line number and relative line numbers
+set number relativenumber
+
 :map <leader>' "0p
 :map Y y$
 :map <leader>p "0p
 map <leader>' viWda'<esc>pa'
 map <leader>" viWda"<esc>pa"
-"  :vmap y y']
-
 map <A-j> :action MoveLineDown
 map <A-k> :action MoveLineUp
-map <leader>b :action GotoDeclaration<CR>
-map <leader>f :action RelatedSymbol<CR>
+map <leader>b <action>(GotoDeclaration)
+map <leader>r <action>(RenameElement)
+nmap <leader>j <action>(GotoRelated)
+nmap <leader>e <action>(ShowErrorDescription)
 
 " Just to beginning and end of lines easier. From http://vimbits.com/bits/16
 " make the leader H and L combination do the original jump to the top and
@@ -49,4 +52,10 @@ set textobj-indent
 # Console log the selectd text (select text first)
 #:vmap <leader>l y<esc>oconsole.log('<esc><leader>pa: ',<esc><leader>pa);<esc>
 vmap <leader>l yoconsole.log('<esc>pa: <esc>lli, <esc>p<esc>A;<esc>H
+
+" NOTE to exit and save the current buffer use the build-in ZZ
+" exit without saving using ZX from current buffer
+nnoremap ZX :q!<enter>
+" exit without saving using ZQ from all buffers
+nnoremap ZQ :qa!<enter>
 

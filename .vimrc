@@ -1,17 +1,17 @@
-"add the numbers gutter
-set number
+" Set line number and relative line numbers
+set number relativenumber
 set ruler
 
-"disable word wrapping
+" Disable word wrapping
 set nowrap
 
-" makes the yank also be taken to the OS lipboard
+" Makes the yank also be taken to the OS lipboard
 "this one worked on cygwin.
 set clipboard=unnamed
 "this clipboard dit not work when $TERM was cygwin
 "set clipboard=unnamedplus
 
-"set the cursor char on each state right
+" Set the cursor char on each state right
 if $TERM == 'cygwin'
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -22,11 +22,11 @@ else
     let &t_te="\e[0 q"
 endif
 
-" this defines the leader key of vim to be the comma key
+" Defines the leader key of vim to be the comma key
 "let mapleader=","
 let mapleader="\<space>"
 
-"adds the syntax hightlighteing show
+" Adds the syntax hightlighteing show
 syntax on
 
 " Just to beginning and end of lines easier. From http://vimbits.com/bits/16
@@ -42,7 +42,7 @@ map J 10j
 map K 10k
 nnoremap <leader>g g;
 
-" paste from the last yanked thing avoiding the last deleted thing for example
+" Paste from the last yanked thing avoiding the last deleted thing for example
 nnoremap <leader>p "0p
 vnoremap <leader>p "0p
 map <leader>' viWda'<esc>pa'
@@ -142,7 +142,6 @@ endfunction
 nnoremap <A-1> :ehco %:p<CR>
 
 
-
 " Use this function to prevent CtrlP opening files inside non-writeable buffers, e.g. NERDTree
 function! SwitchToWriteableBufferAndExec(command)
     let c = 0
@@ -229,3 +228,9 @@ set nofoldenable
 
 " disable the bell sound
 set belloff=all
+
+" NOTE to exit and save the current buffer use the build-in ZZ
+" exit without saving using ZX from current buffer
+nnoremap ZX :q!<enter>
+" exit without saving using ZQ from all buffers
+nnoremap ZQ :qa!<enter>
