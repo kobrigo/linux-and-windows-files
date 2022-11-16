@@ -1,0 +1,28 @@
+1. Install Oh My Zsh: 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/rob...)"
+2. Install Powerlevel10k Theme
+git clone https://github.com/romkatv/powerlevel... $ZSH_CUSTOM/themes/powerlevel10k
+3. Install Auto Suggestions Plugin 
+git clone https://github.com/zsh-users/zsh-auto... $ZSH_CUSTOM/plugins/zsh-autosuggestions
+4. Install Syntax Highlighting
+git clone https://github.com/zsh-users/zsh-synt... $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+5. Install Micro
+sudo curl https://getmic.ro | bash
+6. Open your .zshrc file with Micro
+./micro ~/.zshrc
+7. Set theme to (includes the quotes)
+"powerlevel10k/powerlevel10k"
+8. Activate Enable Correction
+#ENABLE_CORRECTION="true"
+to this
+ENABLE_CORRECTION="true"
+9. Add our plugins
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+10. Save by pressing CNTRL + Q and then type Y to save
+11. Download Nerd Fonts (FiraMono Nerd font)
+https://www.nerdfonts.com
+12. Install the file "Fura Mono Regular Nerd Font Complete.otf"
+
+the full video can be found under:
+https://www.youtube.com/watch?v=9eJ0HHHNuls&t=78s
+
