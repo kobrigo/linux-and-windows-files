@@ -48,6 +48,24 @@ vnoremap <leader>p "0p
 map <leader>' viWda'<esc>pa'
 map <leader>" viWda"<esc>pa"
 
+if system('uname -s') == "Darwin\n"
+  " This is a mac machine (OSX)
+  nnoremap ∆ :m .+1<CR>==
+  nnoremap ˚ :m .-2<CR>==
+  inoremap ∆ <Esc>:m .+1<CR>==gi
+  inoremap ˚ <Esc>:m .-2<CR>==gi
+  vnoremap ∆ :m '>+1<CR>gv=gv
+  vnoremap ˚ :m '<-2<CR>gv=gv
+else 
+  " This is not a mac machine 
+  nnoremap <A-j> :m .+1<CR>==
+  nnoremap <A-k> :m .-2<CR>==
+  inoremap <A-j> <Esc>:m .+1<CR>==gi
+  inoremap <A-k> <Esc>:m .-2<CR>==gi
+  vnoremap <A-j> :m '>+1<CR>gv=gv
+  vnoremap <A-k> :m '<-2<CR>gv=gv
+endif
+
 nnoremap Y y$
 " These are the lines that are needed for Vundle
 " set rtp+=~/.vim/bundle/Vundle.vim

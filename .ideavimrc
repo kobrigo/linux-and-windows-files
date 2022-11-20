@@ -16,8 +16,8 @@ set number relativenumber
 :map <leader>p "0p
 map <leader>' viWda'<esc>pa'
 map <leader>" viWda"<esc>pa"
-map <A-j> :action MoveLineDown
-map <A-k> :action MoveLineUp
+map <A-j> <action>(MoveLineDown)
+map <A-k> <action>(MoveLineUp)
 map <leader>b <action>(GotoDeclaration)
 map <leader>r <action>(RenameElement)
 nmap <leader>j <action>(GotoRelated)
@@ -38,10 +38,6 @@ map J 10j
 map K 10k
 nnoremap <leader>g `.
 
-" Move lines up and down
-map <A-j> :action MoveLineDown<CR>
-map <A-k> :action MoveLineUp<CR>
-map <leader>l :action ReformatSelection<CR>
 
 set ignorecase
 set surround
