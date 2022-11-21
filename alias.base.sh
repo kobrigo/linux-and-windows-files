@@ -31,4 +31,5 @@ alias gct='git commit -am "temp"'
 
 # use vim as the git log pager
 alias glv='git --no-pager log | tovimreadonly'
+alias grlv='git --no-pager reflog | tovimreadonly'
 
