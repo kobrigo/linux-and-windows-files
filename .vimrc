@@ -15,7 +15,7 @@ set clipboard=unnamed
 if $TERM == 'cygwin'
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-else 
+else
     let &t_ti="\e[1 q"
     let &t_SI="\e[5 q"
     let &t_EI="\e[1 q"
@@ -41,6 +41,7 @@ vnoremap L $
 map J 10j
 map K 10k
 nnoremap <leader>g g;
+nnoremap x "_x
 
 " Paste from the last yanked thing avoiding the last deleted thing for example
 nnoremap <leader>p "0p
@@ -56,8 +57,8 @@ if system('uname -s') == "Darwin\n"
   inoremap ˚ <Esc>:m .-2<CR>==gi
   vnoremap ∆ :m '>+1<CR>gv=gv
   vnoremap ˚ :m '<-2<CR>gv=gv
-else 
-  " This is not a mac machine 
+else
+  " This is not a mac machine
   nnoremap <A-j> :m .+1<CR>==
   nnoremap <A-k> :m .-2<CR>==
   inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -119,24 +120,24 @@ call plug#end()
 " sets the default directories where ctags will look for it's database
 set tags=./tags;~/Projects
 nmap <F8> :TagbarToggle<CR>
-let g:tagbar_type_typescript = {                                                  
-  \ 'ctagsbin' : 'tstags',                                                        
-  \ 'ctagsargs' : '-f-',                                                           
-  \ 'kinds': [                                                                     
-    \ 'e:enums:0:1',                                                               
-    \ 'f:function:0:1',                                                            
-    \ 't:typealias:0:1',                                                           
-    \ 'M:Module:0:1',                                                              
-    \ 'I:import:0:1',                                                              
-    \ 'i:interface:0:1',                                                           
-    \ 'C:class:0:1',                                                               
-    \ 'm:method:0:1',                                                              
-    \ 'p:property:0:1',                                                            
-    \ 'v:variable:0:1',                                                            
-    \ 'c:const:0:1',                                                              
-  \ ],                                                                            
-  \ 'sort' : 0                                                                    
-\ } 
+let g:tagbar_type_typescript = {
+  \ 'ctagsbin' : 'tstags',
+  \ 'ctagsargs' : '-f-',
+  \ 'kinds': [
+    \ 'e:enums:0:1',
+    \ 'f:function:0:1',
+    \ 't:typealias:0:1',
+    \ 'M:Module:0:1',
+    \ 'I:import:0:1',
+    \ 'i:interface:0:1',
+    \ 'C:class:0:1',
+    \ 'm:method:0:1',
+    \ 'p:property:0:1',
+    \ 'v:variable:0:1',
+    \ 'c:const:0:1',
+  \ ],
+  \ 'sort' : 0
+\ }
 
 " NERDTree specific settings
 " show also all the hidden files in NERDTree
@@ -150,7 +151,7 @@ function! NERDTreeToggleInCurDir()
   else
       if bufname('%') == ""
         exe ":NERDTreeToggle"
-    else 
+    else
         exe ":NERDTreeFind"
     endif
   endif
@@ -199,8 +200,8 @@ set shiftwidth=2
 set expandtab
 
 " returns true iff is NERDTree open/active
-function! IsNTOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1) 
+function! IsNTOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
 
 function! IsNTIsTheCurrentBuffer()
@@ -234,13 +235,13 @@ augroup myvimrc
 
     " make NERDTree sync it line to show the file we currently entering
     "autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
-    autocmd BufEnter * call SyncTree() 
+    autocmd BufEnter * call SyncTree()
     " close vim if NERDTree is the only buffer left
     "autocmd bufenter * if (winnr("$") == 1 && exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)) | q | endif
 augroup END
 
 " ignore the caseing on searches
-set ignorecase 
+set ignorecase
 " disable all folding (mosting on vimdiff)
 set nofoldenable
 
