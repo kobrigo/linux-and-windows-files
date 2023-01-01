@@ -22,7 +22,6 @@ map <leader>b <action>(GotoDeclaration)
 map <leader>r <action>(RenameElement)
 nmap <leader>j <action>(GotoRelated)
 nmap <leader>e <action>(ShowErrorDescription)
-nmap <C-n>  <action>(NextDifference)
 
 " Just to beginning and end of lines easier. From http://vimbits.com/bits/16
 " make the leader H and L combination do the original jump to the top and
