@@ -42,6 +42,7 @@ map J 10j
 map K 10k
 nnoremap <leader>g g;
 nnoremap x "_x
+nmap <leader>s 1@a
 
 " Paste from the last yanked thing avoiding the last deleted thing for example
 nnoremap <leader>p "0p

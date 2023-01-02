@@ -38,5 +38,8 @@ vim.keymap.set('n', 'K', '10k')
 vim.keymap.set('v', 'J', '10j')
 vim.keymap.set('v', 'K', '10k')
 
+-- short cut to replay the script in register a once
+vim.keymap.set('n', '<leader>s', '1@a')
+
 
 
