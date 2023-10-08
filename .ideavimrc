@@ -56,3 +56,4 @@ nnoremap ZX :q!<enter>
 " exit without saving using ZQ from all buffers
 nnoremap ZQ :qa!<enter>
 
+Plug 'tpope/vim-surround'
