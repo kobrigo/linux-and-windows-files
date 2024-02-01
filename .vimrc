@@ -87,6 +87,8 @@ nnoremap Y y$
 " call vundle#end()
 
 " Trying out antoher plugin manage
+" Check this on how to isntall https://github.com/junegunn/vim-plug
+" (need to download the file plug.vim and place it under ~/.vim/autoload)
 call plug#begin('~/vim-plugins/plugged')
 Plug 'tpope/vim-surround'
 Plug 'leafgarland/typescript-vim'
