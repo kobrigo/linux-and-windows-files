@@ -3,6 +3,11 @@ set ic
 " stop the annoying beeping sound when pressing esc when you should not
 set vb
 
+set ignorecase
+set surround
+set textobj-indent
+set NERDTree
+
 map <S-Enter> O<ESC>
 
 "let mapleader=","
@@ -23,6 +28,7 @@ map <leader>r <action>(RenameElement)
 nmap <leader>j <action>(GotoRelated)
 nmap <leader>e <action>(ShowErrorDescription)
 nmap <leader>s 1@a
+map <c-n> :NERDTree<CR>
 
 " Just to beginning and end of lines easier. From http://vimbits.com/bits/16
 " make the leader H and L combination do the original jump to the top and
@@ -39,10 +45,6 @@ map J 10j
 map K 10k
 nnoremap <leader>g `.
 nnoremap x "_x
-
-set ignorecase
-set surround
-set textobj-indent
 
 # JavaScript/TypeScript Macros
 # --------------------------------
