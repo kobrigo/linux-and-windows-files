@@ -29,6 +29,8 @@ nmap <leader>j <action>(GotoRelated)
 nmap <leader>e <action>(ShowErrorDescription)
 nmap <leader>s 1@a
 map <c-n> :NERDTree<CR>
+map <c-h> %
+map <c-l> %
 
 " Just to beginning and end of lines easier. From http://vimbits.com/bits/16
 " make the leader H and L combination do the original jump to the top and

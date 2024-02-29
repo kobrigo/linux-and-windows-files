@@ -5,6 +5,7 @@ local opt = vim.opt
 local keymap = vim.keymap
 
 
+
 -- default options
 -- opt.completeopt = {'menu', 'menuone', 'noselect'}
 -- opt.laststatus = 3

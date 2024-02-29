@@ -3,6 +3,7 @@ vim.g.mapleader = ' '
 --
 -- Open the file exploerer more esilyt than :Ex
 vim.keymap.set('n', '<leader>e', vim.cmd.Ex)
+vim.keymap.set('n', '<C-n>', vim.cmd.Ex)
 
 -- *** Clipboard Clipboard ***
 --

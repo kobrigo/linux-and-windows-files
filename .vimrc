@@ -42,7 +42,13 @@ map J 10j
 map K 10k
 nnoremap <leader>g g;
 nnoremap x "_x
+
+" map leader followed by s to run the macro that was recorded into a
 nmap <leader>s 1@a
+
+" Map control+h and control+l to % which will jump to the corresponding closing bracket (its just easier and more responsive)
+map <c-h> %
+map <c-l> %
 
 " Paste from the last yanked thing avoiding the last deleted thing for example
 nnoremap <leader>p "0p
@@ -50,6 +56,7 @@ vnoremap <leader>p "0p
 map <leader>' viWda'<esc>pa'
 map <leader>" viWda"<esc>pa"
 
+" move the line that you are at one line to the top or one line to the bottom using alt+j or alt+k
 if system('uname -s') == "Darwin\n"
   " This is a mac machine (OSX)
   nnoremap ∆ :m .+1<CR>==
@@ -68,7 +75,9 @@ else
   vnoremap <A-k> :m '<-2<CR>gv=gv
 endif
 
+" Y will yank all the way from the cursor to the end of the row
 nnoremap Y y$
+
 " These are the lines that are needed for Vundle
 " set rtp+=~/.vim/bundle/Vundle.vim
 " call vundle#begin()
@@ -164,6 +173,7 @@ endfunction
 nnoremap <A-1> :ehco %:p<CR>
 
 
+" CtrlP specific settings START
 " Use this function to prevent CtrlP opening files inside non-writeable buffers, e.g. NERDTree
 function! SwitchToWriteableBufferAndExec(command)
     let c = 0
@@ -176,12 +186,12 @@ function! SwitchToWriteableBufferAndExec(command)
     exec a:command
 endfunction
 
-"CtrlP specific settings
 let g:ctrlp_map = '' " Disable default mapping since we are overriding it with our command
-nnoremap <C-p> :call SwitchToWriteableBufferAndExec('CtrlP')<CR>
-nnoremap <C-l> :call SwitchToWriteableBufferAndExec('CtrlPMRUFiles')<CR>
-nnoremap <C-e> :call SwitchToWriteableBufferAndExec('CtrlPBuffer')<CR>
+"nnoremap <C-p> :call SwitchToWriteableBufferAndExec('CtrlP')<CR>
+"nnoremap <C-l> :call SwitchToWriteableBufferAndExec('CtrlPMRUFiles')<CR>
+"nnoremap <C-e> :call SwitchToWriteableBufferAndExec('CtrlPBuffer')<CR>
 let g:ctrlp_show_hidden = 1
+" CtrlP specific settings END
 
 " my selected color scheme in vim from flazz/vim-colorschemes
 "colorscheme Benokai

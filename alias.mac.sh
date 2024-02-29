@@ -7,3 +7,5 @@
 source $SCRIPT_PATH/alias.base.sh
 # copy the current branc to the clipboard
 alias ccb='git rev-parse --abbrev-ref HEAD | clipcopy'
+alias vi='nvim'
+
