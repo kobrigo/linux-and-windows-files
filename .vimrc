@@ -266,3 +266,8 @@ set belloff=all
 nnoremap ZX :q!<enter>
 " exit without saving using ZQ from all buffers
 nnoremap ZQ :qa!<enter>
+
+" this was added mainly for the $ sign so that when pressing w or e or * or $ these
+" cars listed here will be included as part of the word (so the cursor will not select till the $)
+set iskeyword=@,48-57,_,192-255,?,-,*,!,+,/,=,<,>,:,$
+
