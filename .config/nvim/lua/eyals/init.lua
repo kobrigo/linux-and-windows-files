@@ -6,7 +6,7 @@ vim.opt.tabstop = 2
 -- when indenting add 2 spaces for the indentation
 vim.opt.shiftwidth = 2
 -- make pressing tab insert 2 spaces instead of the tab char
-vim.o.expandtab = 2
+vim.o.expandtab = true 
 -- Disable word wrapping
 vim.wo.wrap = false
 -- show the line numbers gutter/ruller

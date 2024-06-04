@@ -7,6 +7,7 @@ set ignorecase
 set surround
 set textobj-indent
 set NERDTree
+set multiple-cursors
 
 map <S-Enter> O<ESC>
 
@@ -20,17 +21,24 @@ set number relativenumber
 :map Y y$
 :map <leader>p "0p
 map <leader>' viWda'<esc>pa'
-map <leader>" viWda"<esc>pa"
 map <A-j> <action>(MoveLineDown)
+map <leader>" viWda"<esc>pa"
 map <A-k> <action>(MoveLineUp)
 map <leader>b <action>(GotoDeclaration)
 map <leader>r <action>(RenameElement)
 nmap <leader>j <action>(GotoRelated)
 nmap <leader>e <action>(ShowErrorDescription)
+nmap <leader>u u<c-r>
 nmap <leader>s 1@a
 map <c-n> :NERDTree<CR>
 map <c-h> [{
 map <c-l> %
+nmap <c-j> <action>(VcsShowNextChangeMarker)
+nmap <c-k> <action>(VcsShowPrevChangeMarker)
+map mc <A-n>
+map mx <A-x>
+map mp <A-p>
+
 
 " Just to beginning and end of lines easier. From http://vimbits.com/bits/16
 " make the leader H and L combination do the original jump to the top and
@@ -62,6 +70,6 @@ nnoremap ZQ :qa!<enter>
 
 " this was added mainly for the $ sign so that when pressing w or e or * or $ these
 " cars listed here will be included as part of the word (so the cursor will not select till the $)
-set iskeyword=@,48-57,_,192-255,?,-,*,!,+,/,=,<,>,:,$
+set iskeyword=@,48-57,_,192-255,$
 
 
