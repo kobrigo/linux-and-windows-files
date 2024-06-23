@@ -28,7 +28,7 @@ map <leader>b <action>(GotoDeclaration)
 map <leader>r <action>(RenameElement)
 nmap <leader>j <action>(GotoRelated)
 nmap <leader>e <action>(ShowErrorDescription)
-nmap <leader>u u<c-r>
+nmap <leader>u `.
 nmap <leader>s 1@a
 map <c-n> :NERDTree<CR>
 map <c-h> [{

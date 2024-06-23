@@ -56,6 +56,9 @@ vnoremap <leader>p "0p
 map <leader>' viWda'<esc>pa'
 map <leader>" viWda"<esc>pa"
 
+" Jump to the last place I was edting using the leader + u combination
+map <leader>u `.
+
 " move the line that you are at one line to the top or one line to the bottom using alt+j or alt+k
 if system('uname -s') == "Darwin\n"
   " This is a mac machine (OSX)

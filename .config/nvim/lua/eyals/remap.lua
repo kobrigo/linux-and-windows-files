@@ -29,7 +29,6 @@ vim.keymap.set('v', 'H', '^')
 vim.keymap.set('n', 'L', '$')
 vim.keymap.set('v', 'L', '$')
 
-
 -- when using x to delete chars do not place these deleted chars under the pasing register
 vim.keymap.set('n', 'x', '"_x')
 
@@ -42,5 +41,6 @@ vim.keymap.set('v', 'K', '10k')
 -- short cut to replay the script in register a once
 vim.keymap.set('n', '<leader>s', '1@a')
 
-
+-- Just to the last place I was editing using undo and redo trick
+vim.keymap.set('n', '<leader>u', '`.' )
 
