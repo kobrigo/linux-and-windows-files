@@ -11,7 +11,6 @@ set multiple-cursors
 
 map <S-Enter> O<ESC>
 
-"let mapleader=","
 let mapleader=" "
 
 " set line number and relative line numbers
@@ -51,6 +50,8 @@ nnoremap H ^
 nnoremap L $
 vnoremap H ^
 vnoremap L $
+map <C-w> /\u<CR>
+map <C-b> ?\\u<CR>
 map J 10j
 map K 10k
 nnoremap <leader>g `.
@@ -71,5 +72,6 @@ nnoremap ZQ :qa!<enter>
 " this was added mainly for the $ sign so that when pressing w or e or * or $ these
 " cars listed here will be included as part of the word (so the cursor will not select till the $)
 set iskeyword=@,48-57,_,192-255,$
+set virtualedit=onemore
 
 

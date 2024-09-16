@@ -22,8 +22,7 @@ else
     let &t_te="\e[0 q"
 endif
 
-" Defines the leader key of vim to be the comma key
-"let mapleader=","
+" Defines the leader key of vim to be the space key
 let mapleader="\<space>"
 
 " Adds the syntax hightlighteing show
@@ -38,6 +37,8 @@ nnoremap H ^
 nnoremap L $
 vnoremap H ^
 vnoremap L $
+map <C-w> /\u<CR>
+map <C-b> ?\\u<CR>
 map J 10j
 map K 10k
 nnoremap <leader>g g;
