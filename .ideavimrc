@@ -1,8 +1,9 @@
+" this will make the clipboard work with the system clipboard
 set clipboard+=unnamed
-set ic
 " stop the annoying beeping sound when pressing esc when you should not
 set vb
 
+" this ignores the case when searching
 set ignorecase
 set surround
 set textobj-indent
@@ -50,8 +51,8 @@ nnoremap H ^
 nnoremap L $
 vnoremap H ^
 vnoremap L $
-map <C-w> /\u<CR>
-map <C-b> ?\\u<CR>
+map <A-l> /\u<CR>
+map <A-h> ?\\u<CR>
 map J 10j
 map K 10k
 nnoremap <leader>g `.
