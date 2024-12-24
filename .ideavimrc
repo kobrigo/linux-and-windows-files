@@ -56,6 +56,7 @@ map <A-h> ?\\u<CR>
 map J 10j
 map K 10k
 nnoremap <leader>g `.
+nnoremap <leader>f :b#<CR>
 nnoremap x "_x
 
 # JavaScript/TypeScript Macros
