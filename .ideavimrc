@@ -1,28 +1,37 @@
 " this will make the clipboard work with the system clipboard
 set clipboard+=unnamed
-" stop the annoying beeping sound when pressing esc when you should not
+" stop the annoying beeping sound when pressing esc when you should not or by mistake.
 set vb
 
 " this ignores the case when searching
 set ignorecase
+
+" surround virtual plugin allows the surrounding plugin to work
 set surround
+
+" textobj-indent virtual plugin allows you to select the whole block of code like the combinations: vai, dai, cai
 set textobj-indent
+
+" NERDTree virtual plugin allows you to explore your filesystem and to open files and directories.
 set NERDTree
+
+" Multiple-cursors plugin allows you to select multiple cursors and edit them at the same time.
 set multiple-cursors
 
+" Shift + Enter will open a new line above the current line and go back to normal mode
 map <S-Enter> O<ESC>
 
+" Set the leader key to be the space key
 let mapleader=" "
 
-" set line number and relative line numbers
+" set line number gutter to show relative line numbers and the current line number only on the line you are on
 set number relativenumber
 
-:map <leader>' "0p
-:map Y y$
-:map <leader>p "0p
+map Y y$
+map <leader>p "0p
 map <leader>' viWda'<esc>pa'
-map <A-j> <action>(MoveLineDown)
 map <leader>" viWda"<esc>pa"
+map <A-j> <action>(MoveLineDown)
 map <A-k> <action>(MoveLineUp)
 map <leader>b <action>(GotoDeclaration)
 map <leader>r <action>(RenameElement)
@@ -39,7 +48,6 @@ map mc <A-n>
 map mx <A-x>
 map mp <A-p>
 
-
 " Just to beginning and end of lines easier. From http://vimbits.com/bits/16
 " make the leader H and L combination do the original jump to the top and
 " bottom of the page
@@ -52,11 +60,13 @@ nnoremap L $
 vnoremap H ^
 vnoremap L $
 map <A-l> /\u<CR>
-map <A-h> ?\\u<CR>
+map <A-h> ?\u<CR>
 map J 10j
 map K 10k
 nnoremap <leader>g `.
 nnoremap <leader>f :b#<CR>
+
+" this will enable deleting with x to the black hole register meaning it will not be copied to any register
 nnoremap x "_x
 
 # JavaScript/TypeScript Macros
@@ -74,6 +84,9 @@ nnoremap ZQ :qa!<enter>
 " this was added mainly for the $ sign so that when pressing w or e or * or $ these
 " cars listed here will be included as part of the word (so the cursor will not select till the $)
 set iskeyword=@,48-57,_,192-255,$
+
+" allows the cursor to move one character past the end of the line. This can be
+" useful for certain editing tasks where you need to position the cursor just beyond the last character of a line.
 set virtualedit=onemore
 
 

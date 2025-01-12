@@ -1,15 +1,27 @@
 " Set line number and relative line numbers
 set number relativenumber
+
+" shows the line number and the column that the cursor is at
 set ruler
 
 " Disable word wrapping
 set nowrap
 
-" Makes the yank also be taken to the OS lipboard
-"this one worked on cygwin.
+" Makes the yank also be taken to the OS's clipboard
 set clipboard=unnamed
-"this clipboard dit not work when $TERM was cygwin
-"set clipboard=unnamedplus
+
+" disable the bell sound
+set belloff=all
+
+" ignore the caseing on searches
+set ignorecase
+
+" disable all folding (mosting on vimdiff)
+set nofoldenable
+
+" this was added mainly for the $ sign so that when pressing w or e or * or $ these
+" cars listed here will be included as part of the word (so the cursor will not select till the $)
+set iskeyword=@,48-57,_,192-255,$
 
 " Set the cursor char on each state right
 if $TERM == 'cygwin'
@@ -28,7 +40,9 @@ let mapleader="\<space>"
 " Adds the syntax hightlighteing show
 syntax on
 
-" Just to beginning and end of lines easier. From http://vimbits.com/bits/16
+" Map H and L to from their default to be the beginning and the end of the
+" line.. and map their original functionality to the leader-key combination 
+" From http://vimbits.com/bits/16
 nnoremap <leader>H H
 nnoremap <leader>L L
 vnoremap <leader>H H
@@ -37,69 +51,75 @@ nnoremap H ^
 nnoremap L $
 vnoremap H ^
 vnoremap L $
-map <C-w> /\u<CR>
-map <C-b> ?\\u<CR>
+
+" pressing shift+j and shift+k resulting J causes thecursor to jump 10 lines forward this
+" simulate a situation like pressing the gas when moving forward in the file. toggle the 
+" ressshift on shift as you are pressing j or k
 map J 10j
 map K 10k
+
+" Jump to the last place that was edited using the last mark 
+map <leader>u `.
+
+" Jump to the last place that was edited
 nnoremap <leader>g g;
+
+" make x command not fill the buffer
 nnoremap x "_x
+
+" Y will yank all the way from the cursor to the end of the row
+nnoremap Y y$
 
 " map leader followed by s to run the macro that was recorded into a
 nmap <leader>s 1@a
 
 " Map control+h and control+l to % which will jump to the corresponding closing bracket (its just easier and more responsive)
-map <c-h> %
+map <c-h> [{ 
 map <c-l> %
 
-" Paste from the last yanked thing avoiding the last deleted thing for example
+" Paste from the last yanked thing (avoiding the last deleted thing for example)
 nnoremap <leader>p "0p
 vnoremap <leader>p "0p
-map <leader>' viWda'<esc>pa'
-map <leader>" viWda"<esc>pa"
 
-" Jump to the last place I was edting using the leader + u combination
-map <leader>u `.
+" Surround the current word (with big W) where the cursor is on with " or '
+" without using the surround with plugin.
+nnoremap <leader>' viW<esc>a'<esc>Bi'<esc>lEl
+nnoremap <leader>" viW<esc>a"<esc>Bi"<esc>lEl
 
-" move the line that you are at one line to the top or one line to the bottom using alt+j or alt+k
-if system('uname -s') == "Darwin\n"
-  " This is a mac machine (OSX)
+" NOTE to exit and save the current buffer use the build-in ZZ
+" exit without saving using ZX from current buffer
+nnoremap ZX :q!<enter>
+" exit without saving using ZQ from all buffers
+nnoremap ZQ :qa!<enter>
+
+" combinations with the alt-key on macOS and other operating system
+if system('uname -s') == "Darwin\n" " This is a mac machine (macOS)
+  " move the line that you are at one line to the top or one line to the bottom using alt+j or alt+k
   nnoremap ∆ :m .+1<CR>==
   nnoremap ˚ :m .-2<CR>==
   inoremap ∆ <Esc>:m .+1<CR>==gi
   inoremap ˚ <Esc>:m .-2<CR>==gi
   vnoremap ∆ :m '>+1<CR>gv=gv
   vnoremap ˚ :m '<-2<CR>gv=gv
-else
-  " This is not a mac machine
+  " Alt+l will move to the next capital letter on the same line or above
+  vnoremap ¬ /\u<CR>
+  vnoremap ˙ ?\u<CR>
+  nnoremap ¬ /\u<CR>
+  nnoremap ˙ ?\u<CR>
+else " This is not a mac machine
+  " move the line that you are at one line to the top or one line to the bottom using alt+j or alt+k
   nnoremap <A-j> :m .+1<CR>==
   nnoremap <A-k> :m .-2<CR>==
   inoremap <A-j> <Esc>:m .+1<CR>==gi
   inoremap <A-k> <Esc>:m .-2<CR>==gi
   vnoremap <A-j> :m '>+1<CR>gv=gv
   vnoremap <A-k> :m '<-2<CR>gv=gv
+  " Alt+l and Alt+h willmove to the next capital letter on the same line or above
+  map <A-l> /\u<CR>
+  map <A-h> ?\u<CR>
 endif
 
-" Y will yank all the way from the cursor to the end of the row
-nnoremap Y y$
-
-" These are the lines that are needed for Vundle
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-" Plugin 'scrooloose/nerdtree'
-" Plugin 'scrooloose/nerdcommenter'
-" Plugin 'Townk/vim-autoclose'
-" Plugin 'vim-syntastic/syntastic'
-" Plugin 'flazz/vim-colorschemes'
-" Plugin 'ctrlpvim/ctrlp.vim'
-""  "Plugin 'jakedouglas/exuberant-ctags'
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'maksimr/vim-jsbeautify'
-" Plugin 'marcelbeumer/javascript-syntax.vim'
-" Plugin 'easymotion/vim-easymotion'
-" Plugin 'leafgarland/typescript-vim'
-" call vundle#end()
-
-" Trying out antoher plugin manage
+" vim-plug plugin manage
 " Check this on how to isntall https://github.com/junegunn/vim-plug
 " (need to download the file plug.vim and place it under ~/.vim/autoload)
 call plug#begin('~/vim-plugins/plugged')
@@ -131,7 +151,6 @@ Plug 'scrooloose/nerdtree'
 "Plug 'mhartington/oceanic-next'
 " Plug 'kadekillary/subtle_dark'
 call plug#end()
-
 
 " sets the default directories where ctags will look for it's database
 set tags=./tags;~/Projects
@@ -176,7 +195,6 @@ endfunction
 " nnoremap <A-1> :NERDTreeFocus<CR>
 nnoremap <A-1> :ehco %:p<CR>
 
-
 " CtrlP specific settings START
 " Use this function to prevent CtrlP opening files inside non-writeable buffers, e.g. NERDTree
 function! SwitchToWriteableBufferAndExec(command)
@@ -203,9 +221,9 @@ let g:ctrlp_show_hidden = 1
 "colorscheme jelleybeans
 
 " hightlight the current line where the cursor is the position of this is critical it has to be after the setting of the genral theme
-"set cursorline
+" set cursorline
 " changes the hightlight of the corsor line ctermbg is what actually did it
-"hi CursorLine ctermfg=NONE ctermbg=235 cterm=NONE guifg=NONE guibg=#282828 gui=NONE
+" hi CursorLine ctermfg=NONE ctermbg=235 cterm=NONE guifg=NONE guibg=#282828 gui=NONE
 
 " makes indentation work depanding on plugins and the type of the file
 filetype plugin indent on
@@ -233,7 +251,6 @@ function! SyncTree()
   endif
 endfunction
 
-
 augroup myvimrc
     autocmd!
     " open the quickfix buffer right after a vimgrep command
@@ -251,27 +268,9 @@ augroup myvimrc
     autocmd BufNewFile,BufRead *.ts,*.tsx set filetype=typescript
 
     " make NERDTree sync it line to show the file we currently entering
-    "autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+    " utocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
     autocmd BufEnter * call SyncTree()
     " close vim if NERDTree is the only buffer left
-    "autocmd bufenter * if (winnr("$") == 1 && exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)) | q | endif
+    " autocmd bufenter * if (winnr("$") == 1 && exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)) | q | endif
 augroup END
-
-" ignore the caseing on searches
-set ignorecase
-" disable all folding (mosting on vimdiff)
-set nofoldenable
-
-" disable the bell sound
-set belloff=all
-
-" NOTE to exit and save the current buffer use the build-in ZZ
-" exit without saving using ZX from current buffer
-nnoremap ZX :q!<enter>
-" exit without saving using ZQ from all buffers
-nnoremap ZQ :qa!<enter>
-
-" this was added mainly for the $ sign so that when pressing w or e or * or $ these
-" cars listed here will be included as part of the word (so the cursor will not select till the $)
-set iskeyword=@,48-57,_,192-255,?,-,*,!,+,/,=,<,>,:,$
 
