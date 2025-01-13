@@ -20,7 +20,8 @@ set ignorecase
 set nofoldenable
 
 " this was added mainly for the $ sign so that when pressing w or e or * or $ these
-" cars listed here will be included as part of the word (so the cursor will not select till the $)
+" chars listed here will be included as part of the word 
+" (so the cursor will not select till the $ and without it)
 set iskeyword=@,48-57,_,192-255,$
 
 " Set the cursor char on each state right
@@ -119,64 +120,46 @@ else " This is not a mac machine
   map <A-h> ?\u<CR>
 endif
 
-" vim-plug plugin manage
-" Check this on how to isntall https://github.com/junegunn/vim-plug
-" (need to download the file plug.vim and place it under ~/.vim/autoload)
-call plug#begin('~/vim-plugins/plugged')
-Plug 'tpope/vim-surround'
-Plug 'leafgarland/typescript-vim'
-"Plug 'posva/vim-vue'
-"Plug 'tomtom/tcomment_vim'
-"Plug 'tmhedberg/matchit'
-"Plug 'freeo/vim-kalisi'
-Plug 'scrooloose/nerdtree'
-""plugin on GitHub repo
-"Plug 'tpope/vim-fugitive'
-"Plug 'christoomey/vim-tmux-navigator'
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
-"Plug 'junegunn/fzf.vim'
-""youcompleteme
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-""pair completion
-"Plug 'raimondi/delimitmate'
-"let delimitMate_expand_cr = 1
-""tab completion
-"Plug 'ervandew/supertab'
-"colorscheme
-"Plug 'dracula/vim'
-"Plug 'crusoexia/vim-monokai'
-"Plug 'dracula/vim'
-"Plug 'mhartington/oceanic-next'
-" Plug 'kadekillary/subtle_dark'
-call plug#end()
-
-" sets the default directories where ctags will look for it's database
-set tags=./tags;~/Projects
-nmap <F8> :TagbarToggle<CR>
-let g:tagbar_type_typescript = {
-  \ 'ctagsbin' : 'tstags',
-  \ 'ctagsargs' : '-f-',
-  \ 'kinds': [
-    \ 'e:enums:0:1',
-    \ 'f:function:0:1',
-    \ 't:typealias:0:1',
-    \ 'M:Module:0:1',
-    \ 'I:import:0:1',
-    \ 'i:interface:0:1',
-    \ 'C:class:0:1',
-    \ 'm:method:0:1',
-    \ 'p:property:0:1',
-    \ 'v:variable:0:1',
-    \ 'c:const:0:1',
-  \ ],
-  \ 'sort' : 0
-\ }
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if !empty(glob(data_dir . '/autoload/plug.vim'))
+  " vim-plug plugin manage
+  " Check this on how to isntall https://github.com/junegunn/vim-plug
+  " (need to download the file plug.vim and place it under ~/.vim/autoload)
+  call plug#begin('~/vim-plugins/plugged')
+  Plug 'tpope/vim-surround'
+  Plug 'leafgarland/typescript-vim'
+  "Plug 'posva/vim-vue'
+  "Plug 'tomtom/tcomment_vim'
+  "Plug 'tmhedberg/matchit'
+  "Plug 'freeo/vim-kalisi'
+  Plug 'scrooloose/nerdtree'
+  ""plugin on GitHub repo
+  "Plug 'tpope/vim-fugitive'
+  "Plug 'christoomey/vim-tmux-navigator'
+  "Plug 'SirVer/ultisnips'
+  "Plug 'honza/vim-snippets'
+  "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
+  "Plug 'junegunn/fzf.vim'
+  ""youcompleteme
+  "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+  ""pair completion
+  "Plug 'raimondi/delimitmate'
+  "let delimitMate_expand_cr = 1
+  ""tab completion
+  "Plug 'ervandew/supertab'
+  "colorscheme
+  "Plug 'dracula/vim'
+  "Plug 'crusoexia/vim-monokai'
+  "Plug 'dracula/vim'
+  "Plug 'mhartington/oceanic-next'
+  " Plug 'kadekillary/subtle_dark'
+  call plug#end()
+endif
 
 " NERDTree specific settings
 " show also all the hidden files in NERDTree
 let NERDTreeShowHidden=1
+
 " Open NERDTree in the directory of the current file (or /home if no file is open) this is a better alternative to :NERDTreeToggle
 nmap <C-n> :call NERDTreeToggleInCurDir()<cr>
 function! NERDTreeToggleInCurDir()
@@ -191,6 +174,7 @@ function! NERDTreeToggleInCurDir()
     endif
   endif
 endfunction
+
 " map alt+1 to jump to the nerd tree tab
 " nnoremap <A-1> :NERDTreeFocus<CR>
 nnoremap <A-1> :ehco %:p<CR>
