@@ -7,90 +7,121 @@
     {
       "description": "Remap section sign (§) from British Keyboard to US's backtick + plus minus (±) to tilde (~)",
       "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "non_us_backslash"
-          },
-          "to": [
-            {
-              "key_code": "grave_accent_and_tilde"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "non_us_backslash",
-            "modifiers": {
-              "mandatory": ["option"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "grave_accent_and_tilde",
-              "modifiers": [
-                "option"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "non_us_backslash",
-            "modifiers": {
-              "mandatory": ["left_command"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "grave_accent_and_tilde",
-              "modifiers": [
-                "left_command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "non_us_backslash",
-            "modifiers": {
-              "mandatory": ["left_command", "left_shift"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "grave_accent_and_tilde",
-              "modifiers": [
-                "left_command", "left_shift"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "non_us_backslash",
-            "modifiers": {
-              "mandatory": [
-                "shift"
+          {
+              "conditions": [
+                  {
+                      "identifiers": [
+                          {
+                              "is_built_in_keyboard": true,
+                              "location_id": 49
+                          }
+                      ],
+                      "type": "device_unless"
+                  }
               ],
-              "optional": [
-                "caps_lock"
-              ]
-            }
+              "from": { "key_code": "non_us_backslash" },
+              "to": [{ "key_code": "grave_accent_and_tilde" }],
+              "type": "basic"
           },
-          "to": [
-            {
-              "key_code": "grave_accent_and_tilde",
-              "modifiers": [
-                "shift"
-              ]
-            }
-          ]
-        }
+          {
+              "conditions": [
+                  {
+                      "identifiers": [
+                          {
+                              "is_built_in_keyboard": true,
+                              "location_id": 49
+                          }
+                      ],
+                      "type": "device_unless"
+                  }
+              ],
+              "from": {
+                  "key_code": "non_us_backslash",
+                  "modifiers": { "mandatory": ["option"] }
+              },
+              "to": [
+                  {
+                      "key_code": "grave_accent_and_tilde",
+                      "modifiers": ["option"]
+                  }
+              ],
+              "type": "basic"
+          },
+          {
+              "conditions": [
+                  {
+                      "identifiers": [
+                          {
+                              "is_built_in_keyboard": true,
+                              "location_id": 49
+                          }
+                      ],
+                      "type": "device_unless"
+                  }
+              ],
+              "from": {
+                  "key_code": "non_us_backslash",
+                  "modifiers": { "mandatory": ["left_command"] }
+              },
+              "to": [
+                  {
+                      "key_code": "grave_accent_and_tilde",
+                      "modifiers": ["left_command"]
+                  }
+              ],
+              "type": "basic"
+          },
+          {
+              "conditions": [
+                  {
+                      "identifiers": [
+                          {
+                              "is_built_in_keyboard": true,
+                              "location_id": 49
+                          }
+                      ],
+                      "type": "device_unless"
+                  }
+              ],
+              "from": {
+                  "key_code": "non_us_backslash",
+                  "modifiers": { "mandatory": ["left_command", "left_shift"] }
+              },
+              "to": [
+                  {
+                      "key_code": "grave_accent_and_tilde",
+                      "modifiers": ["left_command", "left_shift"]
+                  }
+              ],
+              "type": "basic"
+          },
+          {
+              "conditions": [
+                  {
+                      "identifiers": [
+                          {
+                              "is_built_in_keyboard": true,
+                              "location_id": 49
+                          }
+                      ],
+                      "type": "device_unless"
+                  }
+              ],
+              "from": {
+                  "key_code": "non_us_backslash",
+                  "modifiers": {
+                      "mandatory": ["shift"],
+                      "optional": ["caps_lock"]
+                  }
+              },
+              "to": [
+                  {
+                      "key_code": "grave_accent_and_tilde",
+                      "modifiers": ["shift"]
+                  }
+              ],
+              "type": "basic"
+          }
       ]
     }
   ]
