@@ -15,6 +15,9 @@ set textobj-indent
 " NERDTree virtual plugin allows you to explore your filesystem and to open files and directories.
 set NERDTree
 
+" https://github.com/adelarsq/vim-matchit/blob/master/doc/matchit.txt virtual plugin allows you to jump between matching tags
+set matchit
+
 " Multiple-cursors plugin allows you to select multiple cursors and edit them at the same time.
 set multiple-cursors
 
