@@ -1,4 +1,4 @@
-#! /usr/bin/zsh
+#!/usr/bin/zsh
 
 DOTFILES_DIR="${HOME}/.dotfiles"
 ZSH_CUSTOM_DIR="${HOME}/.oh-my-zsh/custom"
