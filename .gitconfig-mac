@@ -28,3 +28,9 @@
 [core]
     editor = vim
 
+[difftool "vimdiff"]
+    cmd = vim -d "$LOCAL" "$REMOTE"
+
+[mergetool "vimmerge"]
+    cmd = vim -d "$LOCAL" "$BASE" "$REMOTE" "$MERGED" -c '$wincmd w' -c 'wincmd J'
+

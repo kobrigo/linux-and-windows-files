@@ -1,0 +1,43 @@
+{
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vim.commandLineModeKeyBindings": [],
+  "vim.commandLineModeKeyBindingsNonRecursive": [],
+  "vim.leader": "<space>",
+  "vim.vimrc.enable": true,
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.rename"]
+    }
+  ],
+  "files.autoSave": "onFocusChange",
+  "editor.wordWrap": "off",
+  "workbench.colorTheme": "Default Dark Modern",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never"
+    }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.fontSize": 12.5,
+
+  "local-history.path": "${workspaceFolder}/.vscode",
+
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never",
+    "source.fixAll": "never"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never"
+    }
+  }
+}

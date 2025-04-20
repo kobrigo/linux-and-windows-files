@@ -258,3 +258,9 @@ augroup myvimrc
     " autocmd bufenter * if (winnr("$") == 1 && exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)) | q | endif
 augroup END
 
+" map the a" so it will not select any preceeding white spaces
+vnoremap a" 2i"
+onoremap a" 2i"
+vnoremap a' 2i'
+onoremap a' 2i'
+
