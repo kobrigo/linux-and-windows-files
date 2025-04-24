@@ -159,7 +159,17 @@
     "when": "textCompareEditorVisible"
   },
   {
-    "key": "shift+cmd+i",
+    "key": "cmd+shift+i",
     "command": "git.openChange"
+  },
+  {
+    "key": "f4",
+    "command": "git.openFile",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
   }
 ]

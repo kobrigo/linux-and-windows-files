@@ -13,8 +13,13 @@
       "commands": ["editor.action.rename"]
     }
   ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.rename"]
+    }
+  ],
   "files.autoSave": "onFocusChange",
-  "editor.wordWrap": "off",
   "workbench.colorTheme": "Default Dark Modern",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
