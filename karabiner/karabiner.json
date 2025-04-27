@@ -4,6 +4,38 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Open ChatGPT with a single key-binding",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": ["command", "control"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [{ "shell_command": "open -a ChatGPT" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Open finder with the shortcut Command + Ctrl + x",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "x",
+                                    "modifiers": {
+                                        "mandatory": ["command", "control"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [{ "shell_command": "open -a finder" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Make the Asana app (exported from chrome) to show up when pressing Command + Ctrl + a",
                         "manipulators": [
                             {

@@ -234,7 +234,29 @@
               }
           ]
       }]
+    },{
+      "description": "Open ChatGPT with a single key-binding",
+      "manipulators": [
+      {
+          "type": "basic",
+          "from": {
+              "key_code": "p",
+              "modifiers": {
+                  "mandatory": [
+                      "command",
+                      "control"
+                  ],
+                  "optional": [
+                      "caps_lock"
+                  ]
+              }
+          },
+          "to": [
+              {
+                  "shell_command": "open -a ChatGPT"
+              }
+          ]
+      }]
     }
-
   ]
 }

@@ -119,7 +119,7 @@
     "when": "terminalFocus"
   },
   {
-    "key": "cmd+9",
+    "key": "cmd+0",
     "command": "workbench.view.scm",
     "when": "workbench.scm.active"
   },
