@@ -92,4 +92,113 @@ set iskeyword=@,48-57,_,192-255,$
 " useful for certain editing tasks where you need to position the cursor just beyond the last character of a line.
 set virtualedit=onemore
 
+" Disable all the g prefix shortcuts to fix NERDTree plugin g* mapping issue.
+" https://youtrack.jetbrains.com/issue/VIM-3791/gg-G-movements-are-not-supported-and-break-navigation-in-NERDTree
+let g:NERDTreeMapPreview = 'u'
+let g:NERDTreeMapPreviewSplit = ''
+let g:NERDTreeMapPreviewVSplit = ''
 
+" Lowercase letter mappings
+nnoremap ma mA
+nnoremap 'a `Azz
+vnoremap 'a `Azz
+
+nnoremap mb mB
+nnoremap 'b `Bzz
+vnoremap 'b `Bzz
+
+nnoremap mc mC
+nnoremap 'c `Czz
+vnoremap 'c `Czz
+
+nnoremap md mD
+nnoremap 'd `Dzz
+vnoremap 'd `Dzz
+
+nnoremap me mE
+nnoremap 'e `Ezz
+vnoremap 'e `Ezz
+
+nnoremap mf mF
+nnoremap 'f `Fzz
+vnoremap 'f `Fzz
+
+nnoremap mg mG
+nnoremap 'g `Gzz
+vnoremap 'g `Gzz
+
+nnoremap mh mH
+nnoremap 'h `Hzz
+vnoremap 'h `Hzz
+
+nnoremap mi mI
+nnoremap 'i `Izz
+vnoremap 'i `Izz
+
+nnoremap mj mJ
+nnoremap 'j `Jzz
+vnoremap 'j `Jzz
+
+nnoremap mk mK
+nnoremap 'k `Kzz
+vnoremap 'k `Kzz
+
+nnoremap ml mL
+nnoremap 'l `Lzz
+vnoremap 'l `Lzz
+
+nnoremap mm mM
+nnoremap 'm `Mzz
+vnoremap 'm `Mzz
+
+nnoremap mn mN
+nnoremap 'n `Nzz
+vnoremap 'n `Nzz
+
+nnoremap mo mO
+nnoremap 'o `Ozz
+vnoremap 'o `Ozz
+
+nnoremap mp mP
+nnoremap 'p `Pzz
+vnoremap 'p `Pzz
+
+nnoremap mq mQ
+nnoremap 'q `Qzz
+vnoremap 'q `Qzz
+
+nnoremap mr mR
+nnoremap 'r `Rzz
+vnoremap 'r `Rzz
+
+nnoremap ms mS
+nnoremap 's `Szz
+vnoremap 's `Szz
+
+nnoremap mt mT
+nnoremap 't `Tzz
+vnoremap 't `Tzz
+
+nnoremap mu mU
+nnoremap 'u `Uzz
+vnoremap 'u `Uzz
+
+nnoremap mv mV
+nnoremap 'v `Vzz
+vnoremap 'v `Vzz
+
+nnoremap mw mW
+nnoremap 'w `Wzz
+vnoremap 'w `Wzz
+
+nnoremap mx mX
+nnoremap 'x `Xzz
+vnoremap 'x `Xzz
+
+nnoremap my mY
+nnoremap 'y `Yzz
+vnoremap 'y `Yzz
+
+nnoremap mz mZ
+nnoremap 'z `Zzz
+vnoremap 'z `Zzz

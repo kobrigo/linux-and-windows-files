@@ -20,7 +20,7 @@ set ignorecase
 set nofoldenable
 
 " this was added mainly for the $ sign so that when pressing w or e or * or $ these
-" chars listed here will be included as part of the word 
+" chars listed here will be included as part of the word
 " (so the cursor will not select till the $ and without it)
 set iskeyword=@,48-57,_,192-255,$
 
@@ -42,7 +42,7 @@ let mapleader="\<space>"
 syntax on
 
 " Map H and L to from their default to be the beginning and the end of the
-" line.. and map their original functionality to the leader-key combination 
+" line.. and map their original functionality to the leader-key combination
 " From http://vimbits.com/bits/16
 nnoremap <leader>H H
 nnoremap <leader>L L
@@ -54,12 +54,12 @@ vnoremap H ^
 vnoremap L $
 
 " pressing shift+j and shift+k resulting J causes thecursor to jump 10 lines forward this
-" simulate a situation like pressing the gas when moving forward in the file. toggle the 
+" simulate a situation like pressing the gas when moving forward in the file. toggle the
 " ressshift on shift as you are pressing j or k
 map J 10j
 map K 10k
 
-" Jump to the last place that was edited using the last mark 
+" Jump to the last place that was edited using the last mark
 map <leader>u `.
 
 " Jump to the last place that was edited
@@ -75,7 +75,7 @@ nnoremap Y y$
 nmap <leader>s 1@a
 
 " Map control+h and control+l to % which will jump to the corresponding closing bracket (its just easier and more responsive)
-map <c-h> [{ 
+map <c-h> [{
 map <c-l> %
 
 " Paste from the last yanked thing (avoiding the last deleted thing for example)
@@ -264,3 +264,107 @@ onoremap a" 2i"
 vnoremap a' 2i'
 onoremap a' 2i'
 
+" Lowercase letter mappings
+nnoremap ma mA
+nnoremap 'a `Azz
+vnoremap 'a `Azz
+
+nnoremap mb mB
+nnoremap 'b `Bzz
+vnoremap 'b `Bzz
+
+nnoremap mc mC
+nnoremap 'c `Czz
+vnoremap 'c `Czz
+
+nnoremap md mD
+nnoremap 'd `Dzz
+vnoremap 'd `Dzz
+
+nnoremap me mE
+nnoremap 'e `Ezz
+vnoremap 'e `Ezz
+
+nnoremap mf mF
+nnoremap 'f `Fzz
+vnoremap 'f `Fzz
+
+nnoremap mg mG
+nnoremap 'g `Gzz
+vnoremap 'g `Gzz
+
+nnoremap mh mH
+nnoremap 'h `Hzz
+vnoremap 'h `Hzz
+
+nnoremap mi mI
+nnoremap 'i `Izz
+vnoremap 'i `Izz
+
+nnoremap mj mJ
+nnoremap 'j `Jzz
+vnoremap 'j `Jzz
+
+nnoremap mk mK
+nnoremap 'k `Kzz
+vnoremap 'k `Kzz
+
+nnoremap ml mL
+nnoremap 'l `Lzz
+vnoremap 'l `Lzz
+
+nnoremap mm mM
+nnoremap 'm `Mzz
+vnoremap 'm `Mzz
+
+nnoremap mn mN
+nnoremap 'n `Nzz
+vnoremap 'n `Nzz
+
+nnoremap mo mO
+nnoremap 'o `Ozz
+vnoremap 'o `Ozz
+
+nnoremap mp mP
+nnoremap 'p `Pzz
+vnoremap 'p `Pzz
+
+nnoremap mq mQ
+nnoremap 'q `Qzz
+vnoremap 'q `Qzz
+
+nnoremap mr mR
+nnoremap 'r `Rzz
+vnoremap 'r `Rzz
+
+nnoremap ms mS
+nnoremap 's `Szz
+vnoremap 's `Szz
+
+nnoremap mt mT
+nnoremap 't `Tzz
+vnoremap 't `Tzz
+
+nnoremap mu mU
+nnoremap 'u `Uzz
+vnoremap 'u `Uzz
+
+nnoremap mv mV
+nnoremap 'v `Vzz
+vnoremap 'v `Vzz
+
+nnoremap mw mW
+nnoremap 'w `Wzz
+vnoremap 'w `Wzz
+
+nnoremap mx mX
+nnoremap 'x `Xzz
+vnoremap 'x `Xzz
+
+nnoremap my mY
+nnoremap 'y `Yzz
+vnoremap 'y `Yzz
+
+nnoremap mz mZ
+nnoremap 'z `Zzz
+vnoremap 'z `Zzz
