@@ -31,6 +31,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.fontSize": 12.5,
+  "editor.wordWrap": "off",
 
   "local-history.path": "${workspaceFolder}/.vscode",
 
@@ -44,5 +45,8 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": "never"
     }
-  }
+  },
+  "editor.stickyScroll.enabled": false,
+  "git.openDiffOnClick": false,
+  "git.showInlineOpenFileAction": false
 }

@@ -28,7 +28,7 @@
           ]
       }]
     },{
-      "description": "Make the Chrome show up when pressing Command + Ctrl + g",
+      "description": "Make the Edge show up when pressing Command + Ctrl + g",
       "manipulators": [
       {
           "type": "basic",
@@ -300,6 +300,29 @@
           "to": [
               {
                   "shell_command": "open -a 'Cursor'"
+              }
+          ]
+      }]
+    },{
+      "description": "Open Chrome (for Hibob app) + Ctrl + H",
+      "manipulators": [
+      {
+          "type": "basic",
+          "from": {
+              "key_code": "h",
+              "modifiers": {
+                  "mandatory": [
+                      "command",
+                      "control"
+                  ],
+                  "optional": [
+                      "caps_lock"
+                  ]
+              }
+          },
+          "to": [
+              {
+                  "shell_command": "open -a 'Google Chrome'"
               }
           ]
       }]

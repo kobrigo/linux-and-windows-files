@@ -30,6 +30,11 @@ let mapleader=" "
 " set line number gutter to show relative line numbers and the current line number only on the line you are on
 set number relativenumber
 
+" ensures all of the search results are highlighted.
+set hlsearch
+
+" this will remove the search highlight (activated in hlsearch) when pressing // (double slash)
+nnoremap // :noh<CR>
 map Y y$
 map <leader>p "0p
 map <leader>' viWda'<esc>pa'
@@ -41,6 +46,9 @@ map <leader>r <action>(RenameElement)
 nmap <leader>j <action>(GotoRelated)
 nmap <leader>e <action>(ShowErrorDescription)
 nmap <leader>u `.
+nmap <leader>g <action>(RecentChangedFiles)
+" go to last buffer (like ctrl+tab)
+nnoremap <leader>f :b#<CR>
 nmap <leader>s 1@a
 map <c-n> :NERDTree<CR>
 map <c-h> [{
@@ -66,8 +74,6 @@ map <A-l> /\u<CR>
 map <A-h> ?\u<CR>
 map J 10j
 map K 10k
-nnoremap <leader>g `.
-nnoremap <leader>f :b#<CR>
 
 " this will enable deleting with x to the black hole register meaning it will not be copied to any register
 nnoremap x "_x
