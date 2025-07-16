@@ -27,10 +27,6 @@ set iskeyword=@,48-57,_,192-255,$
 " ensures all of the search results are highlighted.
 set hlsearch
 
-" this will remove the search highlight (activated in hlsearch) when pressing // (double slash)
-nnoremap // :noh<CR>
-highlight Search guibg=#444444 guifg=white
-
 " Set the cursor char on each state right
 if $TERM == 'cygwin'
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -62,6 +58,10 @@ vnoremap L $
 
 " go to last buffer (like ctrl+tab)
 nnoremap <leader>f :b#<CR>
+
+" this will remove the search highlight (activated in hlsearch) when pressing // (double slash)
+nnoremap <leader>/ :noh<CR>
+highlight Search guibg=#444444 guifg=white
 
 " pressing shift+j and shift+k resulting J causes thecursor to jump 10 lines forward this
 " simulate a situation like pressing the gas when moving forward in the file. toggle the

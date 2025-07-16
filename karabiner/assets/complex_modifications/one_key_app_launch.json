@@ -304,12 +304,12 @@
           ]
       }]
     },{
-      "description": "Open Chrome (for Hibob app) + Ctrl + H",
+      "description": "Open Chrome with Command + Ctrl + d",
       "manipulators": [
       {
           "type": "basic",
           "from": {
-              "key_code": "h",
+              "key_code": "d",
               "modifiers": {
                   "mandatory": [
                       "command",
@@ -323,6 +323,52 @@
           "to": [
               {
                   "shell_command": "open -a 'Google Chrome'"
+              }
+          ]
+      }]
+    }, {
+      "description": "Open Gemeni app (Edge based) with Command + Ctrl + m",
+      "manipulators": [
+      {
+          "type": "basic",
+          "from": {
+              "key_code": "m",
+              "modifiers": {
+                  "mandatory": [
+                      "command",
+                      "control"
+                  ],
+                  "optional": [
+                      "caps_lock"
+                  ]
+              }
+          },
+          "to": [
+              {
+                  "shell_command": "open -a Gemini"
+              }
+          ]
+      }]
+    },{
+      "description": "Open Grock app Command + Ctrl + k",
+      "manipulators": [
+      {
+          "type": "basic",
+          "from": {
+              "key_code": "k",
+              "modifiers": {
+                  "mandatory": [
+                      "command",
+                      "control"
+                  ],
+                  "optional": [
+                      "caps_lock"
+                  ]
+              }
+          },
+          "to": [
+              {
+                  "shell_command": "open -a Grok"
               }
           ]
       }]

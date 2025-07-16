@@ -34,7 +34,7 @@ set number relativenumber
 set hlsearch
 
 " this will remove the search highlight (activated in hlsearch) when pressing // (double slash)
-nnoremap // :noh<CR>
+nnoremap <leader>/ :noh<CR>
 map Y y$
 map <leader>p "0p
 map <leader>' viWda'<esc>pa'
@@ -74,6 +74,8 @@ map <A-l> /\u<CR>
 map <A-h> ?\u<CR>
 map J 10j
 map K 10k
+
+nnoremap <leader>t <IDEACmd>(Diff.FocusOppositePane)
 
 " this will enable deleting with x to the black hole register meaning it will not be copied to any register
 nnoremap x "_x
