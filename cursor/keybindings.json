@@ -111,7 +111,7 @@
   {
     "key": "escape",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "explorerViewletVisible"
+    "when": "explorerViewletVisible || terminalFocus"
   },
   {
     "key": "cmd+ctrl+l",
@@ -171,5 +171,25 @@
     "key": "cmd+t",
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus"
+  },
+  {
+    "key": "shift+alt+cmd+l",
+    "command": "toggleFindInSelection",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+cmd+l",
+    "command": "-toggleFindInSelection",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+alt+cmd+l",
+    "command": "toggleSearchEditorContextLines",
+    "when": "inSearchEditor"
+  },
+  {
+    "key": "alt+cmd+l",
+    "command": "-toggleSearchEditorContextLines",
+    "when": "inSearchEditor"
   }
 ]

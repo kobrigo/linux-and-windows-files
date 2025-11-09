@@ -1,6 +1,6 @@
 {
   "title": "allow apps to be activated with one key press.",
-  "maintainers": [
+  "maintNotionainers": [
     "Eyal Kobrigo"
   ],
   "rules": [
@@ -369,6 +369,29 @@
           "to": [
               {
                   "shell_command": "open -a Grok"
+              }
+          ]
+      }]
+    },{
+      "description": "Open notion wiht Command + ctrl + o",
+      "manipulators": [
+      {
+          "type": "basic",
+          "from": {
+              "key_code": "o",
+              "modifiers": {
+                  "mandatory": [
+                      "command",
+                      "control"
+                  ],
+                  "optional": [
+                      "caps_lock"
+                  ]
+              }
+          },
+          "to": [
+              {
+                  "shell_command": "open -a Notion"
               }
           ]
       }]

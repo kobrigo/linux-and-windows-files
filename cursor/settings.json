@@ -22,13 +22,10 @@
   "files.autoSave": "onFocusChange",
   "workbench.colorTheme": "Default Dark Modern",
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.codeActionsOnSave": {
       "source.organizeImports": "never"
     }
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.fontSize": 12.5,
   "editor.wordWrap": "off",
@@ -48,5 +45,7 @@
   },
   "editor.stickyScroll.enabled": false,
   "git.openDiffOnClick": false,
-  "git.showInlineOpenFileAction": false
+  "git.showInlineOpenFileAction": false,
+  "typescript.tsserver.nodePath": "node",
+  "typescript.tsserver.maxTsServerMemory": 6144
 }
