@@ -75,6 +75,10 @@ map <A-h> ?\u<CR>
 map J 10j
 map K 10k
 
+" pressing leader (= space) followed by * will search for the
+" word under the cursor and jump to the previous occurrence of it like # does
+nnoremap <leader>* #
+
 nnoremap <leader>t <IDEACmd>(Diff.FocusOppositePane)
 
 " this will enable deleting with x to the black hole register meaning it will not be copied to any register

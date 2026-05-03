@@ -69,6 +69,10 @@ highlight Search guibg=#444444 guifg=white
 map J 10j
 map K 10k
 
+" pressing leader (= space) followed by * will search for the
+" word under the cursor and jump to the previous occurrence of it like # does
+nnoremap <leader>* #
+
 " Jump to the last place that was edited using the last mark
 map <leader>u `.
 
