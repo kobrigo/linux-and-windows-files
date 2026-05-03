@@ -1,4 +1,4 @@
-alias lb='git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)" | vim -R -' 
+alias lb='git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)" | vim -n -R -' 
 
 # this uses clipcopy that has special cases for all OSes 
 copyCurrentBranchToClipBoard()
@@ -13,6 +13,9 @@ alias gvd='git difftool -t vimdiff -y'
 
 # use vimdiff as the mergetool in command prompt
 alias gvm='git mergetool -t vimdiff -y'
+
+# use difftool to check all the changes of the staged files (use git add . first)
+alias gdts='git difftool --staged'
 
 # copy the current directory to the clipboard
 alias ccd='pwd | clipcopy'

@@ -1,7 +1,4 @@
 {
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
   "vim.commandLineModeKeyBindings": [],
   "vim.commandLineModeKeyBindingsNonRecursive": [],
   "vim.leader": "<space>",
@@ -47,5 +44,16 @@
   "git.openDiffOnClick": false,
   "git.showInlineOpenFileAction": false,
   "typescript.tsserver.nodePath": "node",
-  "typescript.tsserver.maxTsServerMemory": 6144
+  "typescript.tsserver.maxTsServerMemory": 6144,
+  "editor.rulers": [80],
+  "gitlens.mode.active": "review",
+  "editor.lineNumbers": "relative",
+  "datadog.connection.oauth.setup.domain": "hibob-prod.datadoghq.eu",
+  "gitlens.views.workspaces.showWorktrees": false,
+  "git.showCursorWorktrees": true,
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+  "datadog.connection.notification.suppressSignInNotification": true,
+  "workbench.editor.enablePreview": false,
+  "datadog.codeSecurity.notification.suppressOnboarding": true,
+  "datadog.cursor.notification.suppressMcpMigrationMessage": true
 }
