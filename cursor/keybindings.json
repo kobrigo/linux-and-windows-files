@@ -231,5 +231,15 @@
     "key": "alt+k",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
-  }
+  },
+  {
+    "key": "cmd+shift+f", 
+    "command": "workbench.action.findInFiles",
+    "args": {
+        "query": "",
+        "replace": "",
+        "filesToInclude": "${relativeFileDirname}"
+    },
+    "when": "explorerViewletFocus"
+}
 ]

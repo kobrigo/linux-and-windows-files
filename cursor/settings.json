@@ -55,5 +55,6 @@
   "datadog.connection.notification.suppressSignInNotification": true,
   "workbench.editor.enablePreview": false,
   "datadog.codeSecurity.notification.suppressOnboarding": true,
-  "datadog.cursor.notification.suppressMcpMigrationMessage": true
+  "datadog.cursor.notification.suppressMcpMigrationMessage": true,
+  "window.autoDetectColorScheme": false
 }
