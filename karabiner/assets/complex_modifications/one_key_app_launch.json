@@ -418,6 +418,52 @@
               }
           ]
       }]
+    },{
+      "description": "Focus iOS Simulator window titled Simulator with Command + Ctrl + u",
+      "manipulators": [
+      {
+          "type": "basic",
+          "from": {
+              "key_code": "u",
+              "modifiers": {
+                  "mandatory": [
+                      "command",
+                      "control"
+                  ],
+                  "optional": [
+                      "caps_lock"
+                  ]
+              }
+          },
+          "to": [
+              {
+                  "shell_command": "open -a Simulator"
+              }
+          ]
+      }]
+    },{
+      "description": "Open IntelliJ IDEA with Command + Ctrl + j",
+      "manipulators": [
+      {
+          "type": "basic",
+          "from": {
+              "key_code": "j",
+              "modifiers": {
+                  "mandatory": [
+                      "command",
+                      "control"
+                  ],
+                  "optional": [
+                      "caps_lock"
+                  ]
+              }
+          },
+          "to": [
+              {
+                  "shell_command": "open -a 'IntelliJ IDEA'"
+              }
+          ]
+      }]
     }
   ]
 }
