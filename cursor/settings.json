@@ -57,5 +57,7 @@
   "datadog.codeSecurity.notification.suppressOnboarding": true,
   "datadog.cursor.notification.suppressMcpMigrationMessage": true,
   "window.autoDetectColorScheme": false,
-  "cursor.composer.queueMessageDefaultBehavior": "steer"
+  "cursor.composer.queueMessageDefaultBehavior": "steer",
+  "intellij.region": "middle_east",
+  "intellij.dataSharing": "none"
 }
