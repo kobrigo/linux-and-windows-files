@@ -161,7 +161,7 @@
           },
           "to": [
               {
-                  "shell_command": "open -a 'My Attendance - bob'"
+                  "shell_command": "open -a 'Homepage - bob'"
               }
           ]
       }]
@@ -461,6 +461,52 @@
           "to": [
               {
                   "shell_command": "open -a 'IntelliJ IDEA'"
+              }
+          ]
+      }]
+    },{
+      "description": "Open IntelliJ IDEA with Command + Ctrl + k",
+      "manipulators": [
+      {
+          "type": "basic",
+          "from": {
+              "key_code": "k",
+              "modifiers": {
+                  "mandatory": [
+                      "command",
+                      "control"
+                  ],
+                  "optional": [
+                      "caps_lock"
+                  ]
+              }
+          },
+          "to": [
+              {
+                  "shell_command": "open -a 'Docker Desktop'"
+              }
+          ]
+      }]
+    },{
+      "description": "Open postman with the key binding Command + Ctrl + h",
+      "manipulators": [
+      {
+          "type": "basic",
+          "from": {
+              "key_code": "h",
+              "modifiers": {
+                  "mandatory": [
+                      "command",
+                      "control"
+                  ],
+                  "optional": [
+                      "caps_lock"
+                  ]
+              }
+          },
+          "to": [
+              {
+                  "shell_command": "open -a 'Postman'"
               }
           ]
       }]
